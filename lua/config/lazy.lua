@@ -51,3 +51,55 @@ require("lazy").setup({
     },
   },
 })
+
+-- tokyonight plugin configuration
+require("tokyonight").setup({
+  style = "moon",
+  styles = {
+      comments = { italic = false },
+      keywords = { italic = false },
+      functions = {},
+      variables = {},
+  },
+  on_colors = function(colors)
+      colors.comment = "#88b288"
+  end
+})
+
+-- vscode plugin configuration
+require('vscode').setup({
+  italic_comments = false,
+  transparent = true,
+  group_overrides = {
+    CursorLine = { bg = '#505050' },
+  }
+})
+
+-- bufferline plugin configuration
+require('bufferline').setup({
+  options = {
+    always_show_bufferline = true,
+    diagnostics = "",
+    hover = {
+      enabled = true,
+      reveal = {'close'},
+    },
+  },
+  highlights = {
+    background = {
+      fg = '#AAAAAA',
+      bg = '#333333',
+    },
+    buffer_selected = {
+      fg='#EEEEEE',
+      bg='#333377',
+      italic = false,
+    },
+    close_button = {
+      fg = '#ffff00',
+    },
+    close_button_selected = {
+      fg = '#ff0000',
+    },
+  }
+})
