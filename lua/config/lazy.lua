@@ -52,20 +52,6 @@ require("lazy").setup({
   },
 })
 
--- tokyonight plugin configuration
-require("tokyonight").setup({
-  style = "moon",
-  styles = {
-      comments = { italic = false },
-      keywords = { italic = false },
-      functions = {},
-      variables = {},
-  },
-  on_colors = function(colors)
-      colors.comment = "#88b288"
-  end
-})
-
 -- vscode plugin configuration
 require('vscode').setup({
   italic_comments = false,
@@ -79,7 +65,7 @@ require('vscode').setup({
 require('bufferline').setup({
   options = {
     always_show_bufferline = true,
-    diagnostics = "",
+    diagnostics = nil,
     hover = {
       enabled = true,
       reveal = {'close'},
