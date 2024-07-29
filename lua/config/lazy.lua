@@ -52,15 +52,6 @@ require("lazy").setup({
   },
 })
 
--- vscode plugin configuration
-require('vscode').setup({
-  italic_comments = false,
-  transparent = true,
-  group_overrides = {
-    CursorLine = { bg = '#505050' },
-  }
-})
-
 -- bufferline plugin configuration
 require('bufferline').setup({
   options = {

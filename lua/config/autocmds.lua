@@ -10,6 +10,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+-- Disable spell check
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "*",
   callback = function()
