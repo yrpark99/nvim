@@ -125,8 +125,8 @@ return {
         "javascript",
         "json",
         "lua",
-        "markdown",
-        "markdown_inline",
+        -- "markdown",
+        -- "markdown_inline",
         "python",
         "query",
         "regex",
@@ -135,6 +135,7 @@ return {
         "vim",
         "yaml",
       },
+      disable = { "markdown", "markdown_inline" },
     },
   },
 
