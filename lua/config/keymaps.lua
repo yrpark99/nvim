@@ -8,3 +8,6 @@ local map = Util.safe_keymap_set
 -- LSP key map
 map("n", "<C-l>", "<cmd>LspStop<cr>", { desc = "Stop LSP" })
 map("n", "<C-r>", "<cmd>LspStart<cr>", { desc = "start LSP" })
+
+-- Git key map
+vim.keymap.set('n', '<F5>', ':Gitsigns next_hunk<CR>', { noremap = true, silent = true })
