@@ -2,12 +2,16 @@
 require("config.lazy")
 
 -- Set Vim options
-vim.opt.clipboard = "unnamedplus"
 vim.opt.fileencodings = "utf-8, euc-kr"
 vim.opt.relativenumber = false
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.termguicolors = true
+
+-- Set clipboard
+vim.defer_fn(function()
+  vim.opt.clipboard = "unnamedplus"
+end, 1000)
 
 -- Set color scheme
 vim.cmd("colorscheme vscode")
