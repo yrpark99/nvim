@@ -4,8 +4,6 @@ require("config.lazy")
 -- Set Vim options
 vim.opt.fileencodings = "utf-8, euc-kr"
 vim.opt.relativenumber = false
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
 vim.opt.termguicolors = true
 
 -- Set clipboard

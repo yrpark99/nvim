@@ -1,3 +1,13 @@
+local function get_tab_space_info()
+  local shift_width = vim.bo.shiftwidth
+  local expand_tab = vim.bo.expandtab
+  if expand_tab then
+    return 'Spaces: ' .. shift_width
+  else
+    return 'Tab Size: ' .. shift_width
+  end
+end
+
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
@@ -27,18 +37,8 @@ return {
     sections = {
       lualine_a = {'mode'},
       lualine_b = {},
-      lualine_c = {LazyVim.lualine.pretty_path()},
-      lualine_x = {'encoding', 'fileformat', 'filetype',
-        function()
-          local shift_width = vim.api.nvim_buf_get_option(0, 'shiftwidth')
-          local expand_tab = vim.api.nvim_buf_get_option(0, 'expandtab')
-          if expand_tab then
-            return 'Spaces: ' .. shift_width
-          else
-            return 'Tab: ' .. shift_width
-          end
-        end
-      },
+      lualine_c = { { 'filename', path = 1 } },
+      lualine_x = {'encoding', 'fileformat', 'filetype', get_tab_space_info },
       lualine_y = {'progress'},
       lualine_z = {'location'}
     },

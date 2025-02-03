@@ -10,4 +10,11 @@ map("n", "<C-l>", "<cmd>LspStop<cr>", { desc = "Stop LSP" })
 map("n", "<C-r>", "<cmd>LspStart<cr>", { desc = "start LSP" })
 
 -- Git key map
-vim.keymap.set('n', '<F5>', ':Gitsigns next_hunk<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<F5>", ":Gitsigns next_hunk<CR>", { noremap = true, silent = true })
+
+-- Copy current file path
+vim.keymap.set("n", "<leader>fp", function()
+  local path = vim.fn.expand("%:p")
+  vim.fn.setreg("+", path)
+  print("Copied: " .. path)
+end, { desc = "Copy file path" })
