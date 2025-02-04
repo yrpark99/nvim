@@ -9,6 +9,10 @@ local map = Util.safe_keymap_set
 map("n", "<C-l>", "<cmd>LspStop<cr>", { desc = "Stop LSP" })
 map("n", "<C-r>", "<cmd>LspStart<cr>", { desc = "start LSP" })
 
+-- Indent key map
+vim.keymap.set('v', '<Tab>', '>gv', { noremap = true })
+vim.keymap.set('v', '<S-Tab>', '<gv', { noremap = true })
+
 -- Git key map
 vim.keymap.set("n", "<F5>", ":Gitsigns next_hunk<CR>", { noremap = true, silent = true })
 
