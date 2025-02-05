@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "*",
   callback = function()
     vim.opt_local.spell = false
-  end
+  end,
 })
 
 -- Set tab configuration for lua

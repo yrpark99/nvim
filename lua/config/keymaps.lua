@@ -10,11 +10,12 @@ map("n", "<C-l>", "<cmd>LspStop<cr>", { desc = "Stop LSP" })
 map("n", "<C-r>", "<cmd>LspStart<cr>", { desc = "start LSP" })
 
 -- Indent key map
-vim.keymap.set('v', '<Tab>', '>gv', { noremap = true })
-vim.keymap.set('v', '<S-Tab>', '<gv', { noremap = true })
+vim.keymap.set("v", "<Tab>", ">gv", { noremap = true, silent = true })
+vim.keymap.set("v", "<S-Tab>", "<gv", { noremap = true, silent = true })
 
--- Git key map
+-- Function key map
 vim.keymap.set("n", "<F5>", ":Gitsigns next_hunk<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "i", "v" }, "<F12>", "<ESC>gd", { noremap = true })
 
 -- Copy current file path
 vim.keymap.set("n", "<leader>fp", function()

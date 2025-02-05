@@ -9,13 +9,19 @@ vim.opt.termguicolors = true
 -- Set clipboard
 vim.defer_fn(function()
   vim.opt.clipboard = "unnamedplus"
-end, 1000)
+end, 3000)
 
 -- Set color scheme
 vim.cmd("colorscheme vscode")
 
 -- Set cursor line number foreground color
 vim.cmd("highlight CursorLineNr guifg=#ff8c00")
+
+-- Set visual non text foreground color
+vim.api.nvim_set_hl(0, "VisualNonText", {
+  bg = vim.api.nvim_get_hl(0, { name = "Visual" }).bg,
+  fg = "#606060",
+})
 
 -- Set file type for specific file name and extension
 vim.filetype.add({
