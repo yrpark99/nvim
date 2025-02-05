@@ -5,7 +5,11 @@ local function detect_indentation()
   local space_width = 0
   local in_multiline_comment = false
 
-  for _, line in ipairs(lines) do
+  for i, line in ipairs(lines) do
+    if i > 1000 then
+      break
+    end
+
     if line:match('^%s*/%*') then
       in_multiline_comment = true
     end
