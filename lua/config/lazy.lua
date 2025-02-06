@@ -53,33 +53,33 @@ require("lazy").setup({
 })
 
 -- bufferline plugin configuration
-require('bufferline').setup({
+require("bufferline").setup({
   options = {
     always_show_bufferline = true,
     diagnostics = nil,
     hover = {
       enabled = true,
-      reveal = {'close'},
+      reveal = { "close" },
     },
     max_name_length = 26,
   },
   highlights = {
     background = {
-      fg = '#AAAAAA',
-      bg = '#333333',
+      fg = "#AAAAAA",
+      bg = "#333333",
     },
     buffer_selected = {
-      fg='#EEEEEE',
-      bg='#333377',
+      fg = "#EEEEEE",
+      bg = "#333377",
       italic = false,
     },
     close_button = {
-      fg = '#ffff00',
+      fg = "#ffff00",
     },
     close_button_selected = {
-      fg = '#ff0000',
+      fg = "#ff0000",
     },
-  }
+  },
 })
 
 -- Neo-tree plugin configuration
@@ -91,9 +91,19 @@ require("neo-tree").setup({
         config = {
           use_float = true,
           use_image_nvim = true,
-          title = 'Neo-tree Preview',
-        }
+          title = "Neo-tree Preview",
+        },
       },
-    }
-  }
+    },
+  },
+})
+
+-- fzf-lua plugin configuration
+require("fzf-lua").setup({
+  winopts = {
+    preview = {
+      layout = "vertical", -- vertical / horizontal
+      vertical = "down:50%",
+    },
+  },
 })
