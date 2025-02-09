@@ -13,6 +13,12 @@ map("n", "<C-r>", "<cmd>LspStart<cr>", { desc = "start LSP" })
 vim.keymap.set("v", "<Tab>", ">gv", { noremap = true, silent = true })
 vim.keymap.set("v", "<S-Tab>", "<gv", { noremap = true, silent = true })
 
+-- File tab key map
+vim.keymap.set({ "n", "i", "v" }, "<A-Right>", "<Esc><cmd>BufferLineMoveNext<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "i", "v" }, "<A-Left>", "<Esc><cmd>BufferLineMovePrev<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>b>", "<cmd>BufferLineMoveNext<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>b<", "<cmd>BufferLineMovePrev<CR>", { noremap = true, silent = true })
+
 -- Function key map
 vim.keymap.set("n", "<F5>", ":Gitsigns next_hunk<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n", "i", "v" }, "<F12>", function()
