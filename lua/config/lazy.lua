@@ -82,6 +82,9 @@ require("bufferline").setup({
   },
 })
 
+-- Loading reopen_latest plugin
+require("reopen_latest")
+
 -- Neo-tree plugin configuration
 require("neo-tree").setup({
   window = {

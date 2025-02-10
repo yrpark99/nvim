@@ -10,22 +10,22 @@ local function detect_indentation()
       break
     end
 
-    if line:match('^%s*/%*') then
+    if line:match("^%s*/%*") then
       in_multiline_comment = true
     end
     if in_multiline_comment then
-      if line:match('%*/') then
+      if line:match("%*/") then
         in_multiline_comment = false
       end
       goto continue
     end
 
-    if line:match('^\t') then
+    if line:match("^\t") then
       tab_count = tab_count + 1
-    elseif line:match('^ +') then
-      local space_leading = line:match('^( +)')
+    elseif line:match("^ +") then
+      local space_leading = line:match("^( +)")
       space_count = space_count + 1
-      if (space_width == 0) then
+      if space_width == 0 then
         space_width = #space_leading
       end
     end
@@ -38,16 +38,16 @@ local function detect_indentation()
   end
 
   if space_count > tab_count then
-    return 'Spaces: ' .. space_width
+    return "Spaces: " .. space_width
   elseif tab_count > space_count then
-    return 'Tab Size: ' .. vim.bo.shiftwidth
+    return "Tab Size: " .. vim.bo.shiftwidth
   else
     local shift_width = vim.bo.shiftwidth
     local expand_tab = vim.bo.expandtab
     if expand_tab then
-      return 'Spaces: ' .. shift_width
+      return "Spaces: " .. shift_width
     else
-      return 'Tab Size: ' .. shift_width
+      return "Tab Size: " .. shift_width
     end
   end
 end
@@ -60,11 +60,11 @@ return {
       icons_enabled = true,
       theme = {
         normal = {
-          c = { bg = '#333333' }
+          c = { bg = "#333333" },
         },
       },
-      component_separators = { left = '', right = ''},
-      section_separators = { left = '', right = ''},
+      component_separators = { left = "", right = "" },
+      section_separators = { left = "", right = "" },
       disabled_filetypes = {
         statusline = {},
         winbar = {},
@@ -76,19 +76,19 @@ return {
         statusline = 1000,
         tabline = 1000,
         winbar = 1000,
-      }
+      },
     },
     sections = {
-      lualine_a = {'mode'},
+      lualine_a = { "mode" },
       lualine_b = {},
-      lualine_c = { { 'filename', path = 1 } },
-      lualine_x = {'encoding', 'fileformat', 'filetype', detect_indentation },
-      lualine_y = {'progress'},
-      lualine_z = {'location'}
+      lualine_c = { { "filename", path = 1 } },
+      lualine_x = { "encoding", "fileformat", "filetype", detect_indentation },
+      lualine_y = { "progress" },
+      lualine_z = { "location" },
     },
     tabline = {},
     winbar = {},
     inactive_winbar = {},
-    extensions = {}
-  }
+    extensions = {},
+  },
 }

@@ -10,7 +10,7 @@ return {
       show_symbol_details = false,
     },
     symbols = {
-      filter = { 'Function' }
-    }
-  }
+      filter = { "Function" },
+    },
+  },
 }
