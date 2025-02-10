@@ -5,6 +5,26 @@
 local Util = require("lazyvim.util")
 local map = Util.safe_keymap_set
 
+-- Shift-Del
+vim.keymap.set({ "n", "v", "i" }, "<S-Del>", function()
+  local mode = vim.api.nvim_get_mode().mode
+  if mode == "i" then
+    return "<Esc>ddi"
+  else
+    return "dd"
+  end
+end, { expr = true, desc = "Delete current line" })
+
+-- Alt-Del
+vim.keymap.set({ "n", "v", "i" }, "<A-Del>", function()
+  local mode = vim.api.nvim_get_mode().mode
+  if mode == "i" then
+    return "<C-o>D"
+  else
+    return "D"
+  end
+end, { expr = true, desc = "Delete from cursor to end of line" })
+
 -- LSP related
 map("n", "<C-l>", "<cmd>LspStop<cr>", { desc = "Stop LSP" })
 map("n", "<C-r>", "<cmd>LspStart<cr>", { desc = "start LSP" })
@@ -18,8 +38,8 @@ vim.keymap.set("v", "<Tab>", ">gv", { noremap = true, silent = true })
 vim.keymap.set("v", "<S-Tab>", "<gv", { noremap = true, silent = true })
 
 -- Reopen latest file tab
-vim.keymap.set( "n", "<C-r>", "<cmd>ReopenLatest<CR>", { noremap = true, silent = true })
-vim.keymap.set( "n", "<leader>br", "<cmd>ReopenLatest<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-r>", "<cmd>ReopenLatest<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>br", "<cmd>ReopenLatest<CR>", { noremap = true, silent = true })
 
 -- File tabs
 vim.keymap.set({ "n", "i", "v" }, "<A-Right>", "<Esc><cmd>BufferLineMoveNext<CR>", { noremap = true, silent = true })
