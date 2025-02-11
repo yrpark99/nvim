@@ -87,7 +87,21 @@ require("reopen_latest")
 
 -- Neo-tree plugin configuration
 require("neo-tree").setup({
+  enable_git_status = false,
+  enable_diagnostics = false,
+  default_component_configs = {
+    file_size = {
+      enabled = false,
+    },
+    type = {
+      enabled = false,
+    },
+    last_modified = {
+      enabled = false,
+    },
+  },
   window = {
+    position = "left",
     mappings = {
       ["P"] = {
         "toggle_preview",

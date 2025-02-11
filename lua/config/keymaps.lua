@@ -6,7 +6,7 @@ local Util = require("lazyvim.util")
 local map = Util.safe_keymap_set
 
 -- Exit(quit all)
-vim.keymap.set({ "n", "i", "v" }, "<A-x>", "<Esc><Cmd>quitall<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "i", "v" }, "<A-q>", "<Esc><Cmd>quitall<CR>", { noremap = true, silent = true })
 
 -- Shift-Del
 vim.keymap.set({ "n", "v", "i" }, "<S-Del>", function()
@@ -45,10 +45,15 @@ vim.keymap.set("n", "<C-r>", "<Cmd>ReopenLatest<CR>", { noremap = true, silent =
 vim.keymap.set("n", "<leader>br", "<Cmd>ReopenLatest<CR>", { noremap = true, silent = true })
 
 -- File tabs
+vim.keymap.set({ "n", "i", "v" }, "<F28>", "<Esc><Cmd>bdelete<CR>", { noremap = true, silent = true }) -- Ctrl+F4
 vim.keymap.set({ "n", "i", "v" }, "<A-Right>", "<Esc><Cmd>BufferLineMoveNext<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n", "i", "v" }, "<A-Left>", "<Esc><Cmd>BufferLineMovePrev<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>b>", "<Cmd>BufferLineMoveNext<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>b<", "<Cmd>BufferLineMovePrev<CR>", { noremap = true, silent = true })
+
+-- Neo-tree
+vim.keymap.set("n", "\\", "<Cmd>Neotree filesystem reveal left<CR>", {})
+vim.keymap.set("n", "<leader>f\\", "<Cmd>Neotree filesystem reveal left<CR>", { noremap = true, silent = true })
 
 -- Copy current file path
 vim.keymap.set("n", "<leader>fp", function()

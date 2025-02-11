@@ -12,6 +12,11 @@ vim.cmd("colorscheme vscode")
 -- Set cursor line number foreground color
 vim.cmd("highlight CursorLineNr guifg=#ff8c00")
 
+-- Set Neo-tree color
+vim.api.nvim_set_hl(0, "NeoTreeIndentMarker", { fg = "#404040" })
+vim.api.nvim_set_hl(0, "NeoTreeWinSeparator", { fg = "#FF7F00" })
+vim.api.nvim_set_hl(0, "NeoTreeRootName", { fg = "#FF0000" })
+
 -- Set visual non text foreground color
 vim.api.nvim_set_hl(0, "VisualNonText", {
   bg = vim.api.nvim_get_hl(0, { name = "Visual" }).bg,
