@@ -1,4 +1,4 @@
--- Keymaps are automatically loaded on the VeryLazy event
+-- keymaks are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
@@ -28,6 +28,14 @@ vim.keymap.set({ "n", "v", "i" }, "<A-Del>", function()
   end
 end, { expr = true, desc = "Delete from cursor to end of line" })
 
+-- Move lines
+map("n", "<A-Down>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
+map("n", "<A-Up>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
+map("i", "<A-Down>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
+map("i", "<A-Up>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+map("v", "<A-Down>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
+map("v", "<A-Up>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
+
 -- LSP related
 map("n", "<A-l>", "<Cmd>LspStop<CR>", { desc = "Stop LSP" })
 map("n", "<A-r>", "<Cmd>LspStart<CR>", { desc = "start LSP" })
@@ -35,6 +43,9 @@ vim.keymap.set({ "n", "i", "v" }, "<F12>", function()
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
   vim.lsp.buf.definition()
 end, { noremap = true })
+
+-- Visual block comment
+vim.keymap.set("v", "<C-_>", "gc", { remap = true }) -- Ctrl+/
 
 -- Tab indent
 vim.keymap.set("v", "<Tab>", ">gv", { noremap = true, silent = true })
@@ -54,6 +65,9 @@ vim.keymap.set("n", "<leader>b<", "<Cmd>BufferLineMovePrev<CR>", { noremap = tru
 -- Neo-tree
 vim.keymap.set("n", "\\", "<Cmd>Neotree filesystem reveal left<CR>", {})
 vim.keymap.set("n", "<leader>f\\", "<Cmd>Neotree filesystem reveal left<CR>", { noremap = true, silent = true })
+
+-- todo-comments
+vim.keymap.set({ "n", "i", "v" }, "<C-A-t>", "<Esc><Cmd>TodoLocList<CR>", { noremap = true, silent = true })
 
 -- Copy current file path
 vim.keymap.set("n", "<leader>fp", function()

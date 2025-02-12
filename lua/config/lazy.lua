@@ -124,3 +124,15 @@ require("fzf-lua").setup({
     },
   },
 })
+
+-- todo-comments plugin configuration
+require("todo-comments").setup({
+  signs = false,
+  highlight = {
+    keyword = "bg",
+    pattern = [[.*(KEYWORDS)\s*]],
+  },
+  search = {
+    pattern = [[\b(KEYWORDS)\b]],
+  },
+})
