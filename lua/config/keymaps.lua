@@ -44,15 +44,16 @@ vim.keymap.set({ "n", "i", "v" }, "<F12>", function()
   vim.lsp.buf.definition()
 end, { noremap = true })
 
--- Visual block comment
-vim.keymap.set("v", "<C-_>", "gc", { remap = true }) -- Ctrl+/
+-- Line/block comment (Ctrl+/)
+vim.keymap.set("n", "<C-_>", "gcc", { remap = true })
+vim.keymap.set("v", "<C-_>", "gc", { remap = true })
 
 -- Tab indent
 vim.keymap.set("v", "<Tab>", ">gv", { noremap = true, silent = true })
 vim.keymap.set("v", "<S-Tab>", "<gv", { noremap = true, silent = true })
 
 -- Reopen latest file tab
-vim.keymap.set("n", "<C-r>", "<Cmd>ReopenLatest<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<S-t>", "<Cmd>ReopenLatest<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>br", "<Cmd>ReopenLatest<CR>", { noremap = true, silent = true })
 
 -- File tabs
