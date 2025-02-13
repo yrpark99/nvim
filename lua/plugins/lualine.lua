@@ -52,6 +52,12 @@ local function detect_indentation()
   end
 end
 
+local function cursor_position()
+  local line = vim.fn.line('.')
+  local col = vim.fn.charcol('.')
+  return string.format('Ln %d, Col %d', line, col)
+end
+
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
@@ -60,7 +66,27 @@ return {
       icons_enabled = true,
       theme = {
         normal = {
-          c = { bg = "#333333" },
+          a = { bg = "#98C379", fg = "#000000" },
+          c = { bg = "#333333", fg = "#FFFFFF" },
+          x = { bg = "#333333", fg = "#FFB27D" },
+          y = { bg = "#333333", fg = "#FFF200" },
+          z = { bg = "#333333", fg = "#60C5F1" },
+        },
+        insert = {
+          a = { bg = "#61AFEF", fg = "#000000" },
+          z = { bg = "#333333", fg = "#60C5F1" },
+        },
+        visual = {
+          a = { bg = "#C678DD", fg = "#000000" },
+          z = { bg = "#333333", fg = "#60C5F1" },
+        },
+        replace = {
+          a = { bg = "#E06C75", fg = "#000000" },
+          z = { bg = "#333333", fg = "#60C5F1" },
+        },
+        command = {
+          a = { bg = "#E5C07B", fg = "#000000" },
+          z = { bg = "#333333", fg = "#60C5F1" },
         },
       },
       component_separators = { left = "", right = "" },
@@ -84,7 +110,7 @@ return {
       lualine_c = { { "filename", path = 1 } },
       lualine_x = { "encoding", "fileformat", "filetype", detect_indentation },
       lualine_y = { "progress" },
-      lualine_z = { "location" },
+      lualine_z = { cursor_position },
     },
     tabline = {},
     winbar = {},

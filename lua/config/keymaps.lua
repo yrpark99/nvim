@@ -28,11 +28,15 @@ vim.keymap.set({ "n", "v", "i" }, "<A-Del>", function()
   end
 end, { expr = true, desc = "Delete from cursor to end of line" })
 
+-- Find
+vim.keymap.set({ "n", "i" }, "<F3>", "<Esc>*", { noremap = true })
+vim.keymap.set({ "n", "i" }, "<F15>", "<Esc>#", { noremap = true })
+
 -- Move lines
-map("n", "<A-Down>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
-map("n", "<A-Up>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
-map("i", "<A-Down>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
-map("i", "<A-Up>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+map("n", "<A-Down>", "<Cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
+map("n", "<A-Up>", "<Cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
+map("i", "<A-Down>", "<Esc><Cmd>m .+1<cr>==gi", { desc = "Move Down" })
+map("i", "<A-Up>", "<Esc><Cmd>m .-2<cr>==gi", { desc = "Move Up" })
 map("v", "<A-Down>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
 map("v", "<A-Up>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 

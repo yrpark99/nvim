@@ -61,7 +61,7 @@ require("bufferline").setup({
       enabled = true,
       reveal = { "close" },
     },
-    max_name_length = 26,
+    max_name_length = 33,
   },
   highlights = {
     background = {
