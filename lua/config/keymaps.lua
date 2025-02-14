@@ -71,8 +71,8 @@ vim.keymap.set("n", "<leader>b<", "<Cmd>BufferLineMovePrev<CR>", { noremap = tru
 vim.keymap.set("n", "\\", "<Cmd>Neotree filesystem reveal left<CR>", {})
 vim.keymap.set("n", "<leader>f\\", "<Cmd>Neotree filesystem reveal left<CR>", { noremap = true, silent = true })
 
--- todo-comments
-vim.keymap.set({ "n", "i", "v" }, "<C-A-t>", "<Esc><Cmd>TodoLocList<CR>", { noremap = true, silent = true })
+-- Todo-comments
+vim.keymap.set({ "n", "i", "v" }, "<C-A-t>", "<Esc><Cmd>TodoLocList keywords=TODO,FIXME<CR>", { noremap = true, silent = true })
 
 -- Copy current file path
 vim.keymap.set("n", "<leader>fp", function()

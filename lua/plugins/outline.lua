@@ -1,16 +1,18 @@
 return {
-  "hedyhli/outline.nvim",
-  lazy = true,
-  cmd = { "Outline", "OutlineOpen" },
-  keys = {
-    { "<leader>o", "<Cmd>Outline<CR>", desc = "Toggle outline" },
-  },
+  "stevearc/aerial.nvim",
+  backends = { "lsp" },
   opts = {
-    outline_items = {
-      show_symbol_details = false,
+    filter_kind = {
+      "Class",
+      "Constructor",
+      "Function",
+      "Interface",
+      "Method",
+      "Module",
     },
-    symbols = {
-      filter = { "Function" },
-    },
+    autojump = false,
+  },
+  keys = {
+    { "<leader>o", "<Cmd>AerialToggle!<CR>", desc = "Toggle Outline" },
   },
 }

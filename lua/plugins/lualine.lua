@@ -53,9 +53,9 @@ local function detect_indentation()
 end
 
 local function cursor_position()
-  local line = vim.fn.line('.')
-  local col = vim.fn.charcol('.')
-  return string.format('Ln %d, Col %d', line, col)
+  local line = vim.fn.line(".")
+  local col = vim.fn.charcol(".")
+  return string.format("Ln %d, Col %d", line, col)
 end
 
 return {
@@ -67,7 +67,7 @@ return {
       theme = {
         normal = {
           a = { bg = "#98C379", fg = "#000000" },
-          c = { bg = "#333333", fg = "#FFFFFF" },
+          c = { bg = "#333333", fg = "#E8E8E8" },
           x = { bg = "#333333", fg = "#FFB27D" },
           y = { bg = "#333333", fg = "#FFF200" },
           z = { bg = "#333333", fg = "#60C5F1" },

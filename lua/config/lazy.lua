@@ -62,15 +62,16 @@ require("bufferline").setup({
       reveal = { "close" },
     },
     max_name_length = 33,
+    right_mouse_command = "vertical sbuffer %d",
   },
   highlights = {
     background = {
-      fg = "#AAAAAA",
+      fg = "#EEEEEE",
       bg = "#333333",
     },
     buffer_selected = {
       fg = "#EEEEEE",
-      bg = "#333377",
+      bg = "#443377",
       italic = false,
     },
     close_button = {
@@ -127,10 +128,18 @@ require("fzf-lua").setup({
 
 -- todo-comments plugin configuration
 require("todo-comments").setup({
-  signs = false,
+  signs = true,
+  keywords = {
+    FIX = { icon = " ", color = "error", alt = { "FIXME" } },
+    WARN = { icon = " ", color = "warning", alt = { "WARNING" } },
+    TODO = { icon = " ", color = "info" },
+    NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+  },
+  merge_keywords = false,
   highlight = {
     keyword = "bg",
-    pattern = [[.*(KEYWORDS)\s*]],
+    after = "",
+    pattern = [[[!-/:-@\[-`{-~ \t](KEYWORDS)[!-/:-@\[-`{-~ \t]+]],
   },
   search = {
     pattern = [[\b(KEYWORDS)\b]],
