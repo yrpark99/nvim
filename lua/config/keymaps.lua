@@ -72,11 +72,26 @@ vim.keymap.set("n", "\\", "<Cmd>Neotree filesystem reveal left<CR>", {})
 vim.keymap.set("n", "<leader>f\\", "<Cmd>Neotree filesystem reveal left<CR>", { noremap = true, silent = true })
 
 -- Todo-comments
-vim.keymap.set({ "n", "i", "v" }, "<C-A-t>", "<Esc><Cmd>TodoLocList keywords=TODO,FIXME<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "i", "v" }, "<C-A-t>", "<Esc><Cmd>TodoLocList<CR>", { noremap = true, silent = true })
 
--- Copy current file path
-vim.keymap.set("n", "<leader>fp", function()
+-- Copy current file name
+vim.keymap.set("n", "<leader>fx", function()
+  local path = vim.fn.expand("%:o")
+  local name = vim.fs.basename(path)
+  vim.fn.setreg("+", name)
+  print("Copied: " .. name)
+end, { desc = "Copy current file name" })
+
+-- Copy current file absolute path
+vim.keymap.set("n", "<leader>fy", function()
   local path = vim.fn.expand("%:p")
   vim.fn.setreg("+", path)
   print("Copied: " .. path)
-end, { desc = "Copy file path" })
+end, { desc = "Copy current file absolute path" })
+
+-- Copy current file relative path
+vim.keymap.set("n", "<leader>fz", function()
+  local path = vim.fn.expand("%:.")
+  vim.fn.setreg("+", path)
+  print("Copied: " .. path)
+end, { desc = "Copy current file relative path" })

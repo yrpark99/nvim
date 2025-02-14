@@ -120,7 +120,7 @@ require("neo-tree").setup({
 require("fzf-lua").setup({
   winopts = {
     preview = {
-      layout = "vertical", -- vertical / horizontal
+      layout = "vertical",
       vertical = "down:50%",
     },
   },
@@ -139,7 +139,7 @@ require("todo-comments").setup({
   highlight = {
     keyword = "bg",
     after = "",
-    pattern = [[[!-/:-@\[-`{-~ \t](KEYWORDS)[!-/:-@\[-`{-~ \t]+]],
+    pattern = [[\s(KEYWORDS)\s]],
   },
   search = {
     pattern = [[\b(KEYWORDS)\b]],
