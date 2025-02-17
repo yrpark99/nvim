@@ -13,6 +13,6 @@ return {
     autojump = false,
   },
   keys = {
-    { "<leader>o", "<Cmd>AerialToggle!<CR>", desc = "Toggle Outline" },
+    { "<leader>o", "<cmd>AerialToggle!<CR>", desc = "Toggle Outline" },
   },
 }

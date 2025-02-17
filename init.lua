@@ -25,13 +25,3 @@ vim.api.nvim_set_hl(0, "VisualNonText", {
 
 -- Set bookmark color
 vim.api.nvim_set_hl(0, "navimark_hl", { fg = "#0C61F4" })
-
--- Set file type for specific file name and extension
-vim.filetype.add({
-  filename = {
-    ["nset"] = "make",
-  },
-  extension = {
-    inc = "make",
-  },
-})
