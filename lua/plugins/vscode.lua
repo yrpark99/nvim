@@ -6,6 +6,7 @@ return {
       transparent = true,
       group_overrides = {
         CursorLine = { bg = "#505050" },
+        SnacksIndent = { fg = "#303030" },
       },
     })
   end,

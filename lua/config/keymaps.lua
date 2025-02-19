@@ -48,9 +48,9 @@ vim.keymap.set({ "n", "i", "v" }, "<F12>", function()
   vim.lsp.buf.definition()
 end, { noremap = true })
 
--- Line/block comment (Ctrl+/)
-vim.keymap.set("n", "<C-_>", "gcc", { remap = true })
-vim.keymap.set("v", "<C-_>", "gc", { remap = true })
+-- Line/block comment (Ctrl+\)
+vim.keymap.set("n", "<C-\\>", "gcc", { remap = true })
+vim.keymap.set("v", "<C-\\>", "gc", { remap = true })
 
 -- Tab indent
 vim.keymap.set("v", "<Tab>", ">gv", { noremap = true, silent = true })
