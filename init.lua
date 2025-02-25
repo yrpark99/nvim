@@ -14,14 +14,14 @@ vim.cmd("highlight CursorLineNr guifg=#ff8c00")
 
 -- Set Neo-tree color
 vim.api.nvim_set_hl(0, "NeoTreeIndentMarker", { fg = "#404040" })
-vim.api.nvim_set_hl(0, "NeoTreeWinSeparator", { fg = "#FF7F00" })
-vim.api.nvim_set_hl(0, "NeoTreeRootName", { fg = "#FF0000" })
+vim.api.nvim_set_hl(0, "NeoTreeWinSeparator", { fg = "#ff7f00" })
+vim.api.nvim_set_hl(0, "NeoTreeRootName", { fg = "#ff0000" })
 
--- Set visual non text foreground color
+-- Set visual non text foreground color (for tab/space charachter color in visual area)
 vim.api.nvim_set_hl(0, "VisualNonText", {
   bg = vim.api.nvim_get_hl(0, { name = "Visual" }).bg,
   fg = "#585858",
 })
 
 -- Set bookmark color
-vim.api.nvim_set_hl(0, "navimark_hl", { fg = "#0C61F4" })
+vim.api.nvim_set_hl(0, "navimark_hl", { fg = "#0c61f4" })

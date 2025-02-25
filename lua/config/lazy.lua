@@ -66,11 +66,11 @@ require("bufferline").setup({
   },
   highlights = {
     background = {
-      fg = "#EEEEEE",
+      fg = "#eeeeee",
       bg = "#333333",
     },
     buffer_selected = {
-      fg = "#EEEEEE",
+      fg = "#eeeeee",
       bg = "#443377",
       italic = false,
     },

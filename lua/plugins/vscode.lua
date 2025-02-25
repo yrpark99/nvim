@@ -5,8 +5,10 @@ return {
       italic_comments = false,
       transparent = true,
       group_overrides = {
-        CursorLine = { bg = "#505050" },
+        CursorLine = { bg = "#353535" },
         SnacksIndent = { fg = "#303030" },
+        NeoTreeCursorLine = { bg = "#373737" },
+        NvimTreeCursorLine = { bg = "#373737" },
       },
     })
   end,

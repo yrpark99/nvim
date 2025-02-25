@@ -1,54 +1,10 @@
-local function detect_indentation()
-  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
-  local tab_count = 0
-  local space_count = 0
-  local space_width = 0
-  local in_multiline_comment = false
-
-  for i, line in ipairs(lines) do
-    if i > 1000 then
-      break
-    end
-
-    if line:match("^%s*/%*") then
-      in_multiline_comment = true
-    end
-    if in_multiline_comment then
-      if line:match("%*/") then
-        in_multiline_comment = false
-      end
-      goto continue
-    end
-
-    if line:match("^\t") then
-      tab_count = tab_count + 1
-    elseif line:match("^ +") then
-      local space_leading = line:match("^( +)")
-      space_count = space_count + 1
-      if space_width == 0 then
-        space_width = #space_leading
-      end
-    end
-
-    if space_count > 10 or tab_count > 10 then
-      break
-    end
-
-    ::continue::
-  end
-
-  if space_count > tab_count then
-    return "Spaces: " .. space_width
-  elseif tab_count > space_count then
-    return "Tab Size: " .. vim.bo.shiftwidth
+local function display_indent_info()
+  local shift_width = vim.bo.shiftwidth
+  local expand_tab = vim.bo.expandtab
+  if expand_tab then
+    return "Spaces: " .. shift_width
   else
-    local shift_width = vim.bo.shiftwidth
-    local expand_tab = vim.bo.expandtab
-    if expand_tab then
-      return "Spaces: " .. shift_width
-    else
-      return "Tab Size: " .. shift_width
-    end
+    return "Tab Size: " .. shift_width
   end
 end
 
@@ -132,28 +88,28 @@ return {
       icons_enabled = true,
       theme = {
         normal = {
-          a = { bg = "#98C379", fg = "#000000" },
-          b = { bg = "#333333", fg = "#E8E8E8" },
-          c = { bg = "#333333", fg = "#D75BEA" },
-          x = { bg = "#333333", fg = "#FFB27D" },
-          y = { bg = "#333333", fg = "#FFF200" },
-          z = { bg = "#333333", fg = "#60C5F1" },
+          a = { bg = "#98c379", fg = "#000000" },
+          b = { bg = "#333333", fg = "#e8e8e8" },
+          c = { bg = "#333333", fg = "#d75bea" },
+          x = { bg = "#333333", fg = "#ffb27d" },
+          y = { bg = "#333333", fg = "#fff200" },
+          z = { bg = "#333333", fg = "#60c5f1" },
         },
         insert = {
-          a = { bg = "#61AFEF", fg = "#000000" },
-          z = { bg = "#333333", fg = "#60C5F1" },
+          a = { bg = "#61afef", fg = "#000000" },
+          z = { bg = "#333333", fg = "#60c5f1" },
         },
         visual = {
-          a = { bg = "#C678DD", fg = "#000000" },
-          z = { bg = "#333333", fg = "#60C5F1" },
+          a = { bg = "#c678dd", fg = "#000000" },
+          z = { bg = "#333333", fg = "#60c5f1" },
         },
         replace = {
-          a = { bg = "#E06C75", fg = "#000000" },
-          z = { bg = "#333333", fg = "#60C5F1" },
+          a = { bg = "#e06c75", fg = "#000000" },
+          z = { bg = "#333333", fg = "#60c5f1" },
         },
         command = {
-          a = { bg = "#E5C07B", fg = "#000000" },
-          z = { bg = "#333333", fg = "#60C5F1" },
+          a = { bg = "#e5c07b", fg = "#000000" },
+          z = { bg = "#333333", fg = "#60c5f1" },
         },
       },
       component_separators = { left = "", right = "" },
@@ -175,7 +131,7 @@ return {
       lualine_a = { "mode" },
       lualine_b = { { "filename", path = 1 } },
       lualine_c = { visual_selection_count },
-      lualine_x = { "encoding", "fileformat", "filetype", detect_indentation },
+      lualine_x = { "encoding", "fileformat", "filetype", display_indent_info },
       lualine_y = { "progress" },
       lualine_z = { cursor_position },
     },

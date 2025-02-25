@@ -15,7 +15,7 @@ return {
       },
       sign = {
         text = "",
-        color = "#0C61F4",
+        color = "#0c61f4",
       },
       persist = true,
     })
