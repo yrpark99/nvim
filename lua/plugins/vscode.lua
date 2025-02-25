@@ -9,6 +9,8 @@ return {
         SnacksIndent = { fg = "#303030" },
         NeoTreeCursorLine = { bg = "#373737" },
         NvimTreeCursorLine = { bg = "#373737" },
+        ["@lsp.type.comment.c"] = { fg = "#909090" },
+        ["@lsp.type.comment.cpp"] = { fg = "#909090" },
       },
     })
   end,
