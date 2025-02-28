@@ -58,18 +58,18 @@ vim.keymap.set("v", "<S-Tab>", "<gv", { noremap = true, silent = true })
 
 -- Reopen latest file tab
 vim.keymap.set("n", "<S-t>", "<cmd>ReopenLatest<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>br", "<cmd>ReopenLatest<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>br", "<cmd>ReopenLatest<CR>", { noremap = true, silent = true, desc = "Reopen latest closed tab" })
 
 -- File tabs
 vim.keymap.set({ "n", "i", "v" }, "<F28>", "<esc><cmd>bdelete<CR>", { noremap = true, silent = true }) -- Ctrl+F4
 vim.keymap.set({ "n", "i", "v" }, "<A-Right>", "<esc><cmd>BufferLineMoveNext<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n", "i", "v" }, "<A-Left>", "<esc><cmd>BufferLineMovePrev<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>b>", "<cmd>BufferLineMoveNext<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>b<", "<cmd>BufferLineMovePrev<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>b>", "<cmd>BufferLineMoveNext<CR>", { noremap = true, silent = true, desc = "Move current tab to next" })
+vim.keymap.set("n", "<leader>b<", "<cmd>BufferLineMovePrev<CR>", { noremap = true, silent = true, desc = "Move current tab to previous" })
 
 -- Neo-tree
 vim.keymap.set("n", "\\", "<cmd>Neotree filesystem reveal left<CR>", {})
-vim.keymap.set("n", "<leader>f\\", "<cmd>Neotree filesystem reveal left<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>f\\", "<cmd>Neotree filesystem reveal left<CR>", { noremap = true, silent = true, desc = "Sync Neo-tree position" })
 
 -- Todo-comments
 vim.keymap.set({ "n", "i", "v" }, "<C-A-t>", "<esc><cmd>TodoLocList<CR>", { noremap = true, silent = true })
