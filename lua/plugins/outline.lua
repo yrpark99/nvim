@@ -10,7 +10,7 @@ return {
       "Method",
       "Module",
     },
-    autojump = false,
+    autojump = true,
   },
   keys = {
     { "<leader>o", "<cmd>AerialToggle!<CR>", desc = "Toggle Outline" },

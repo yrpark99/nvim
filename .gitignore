@@ -1,4 +1,3 @@
-.nvim/
 .vscode/
 tt.*
 .tests
@@ -10,3 +9,4 @@ foo.*
 data
 lazyvim.json
 lazy-lock.json
+navimark.json
