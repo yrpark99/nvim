@@ -86,46 +86,6 @@ require("bufferline").setup({
 -- Loading reopen_latest plugin
 require("reopen_latest")
 
--- Neo-tree plugin configuration
-require("neo-tree").setup({
-  enable_git_status = false,
-  enable_diagnostics = false,
-  default_component_configs = {
-    file_size = {
-      enabled = false,
-    },
-    type = {
-      enabled = false,
-    },
-    last_modified = {
-      enabled = false,
-    },
-  },
-  window = {
-    position = "left",
-    mappings = {
-      ["P"] = {
-        "toggle_preview",
-        config = {
-          use_float = true,
-          use_image_nvim = true,
-          title = "Neo-tree Preview",
-        },
-      },
-    },
-  },
-})
-
--- fzf-lua plugin configuration
-require("fzf-lua").setup({
-  winopts = {
-    preview = {
-      layout = "vertical",
-      vertical = "down:50%",
-    },
-  },
-})
-
 -- todo-comments plugin configuration
 require("todo-comments").setup({
   signs = true,

@@ -1,4 +1,3 @@
-.vscode/
 tt.*
 .tests
 doc/tags
@@ -7,6 +6,7 @@ debug
 foo.*
 *.log
 data
+.vscode/
+.navimark.json
 lazyvim.json
 lazy-lock.json
-navimark.json

@@ -168,6 +168,7 @@ return {
         "clangd",
         "flake8",
         "pyright",
+        "shellcheck",
         "shfmt",
         "stylua",
       },
