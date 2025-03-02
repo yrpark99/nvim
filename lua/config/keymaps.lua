@@ -67,10 +67,6 @@ vim.keymap.set({ "n", "i", "v" }, "<A-Left>", "<esc><cmd>BufferLineMovePrev<CR>"
 vim.keymap.set("n", "<leader>b>", "<cmd>BufferLineMoveNext<CR>", { noremap = true, silent = true, desc = "Move current tab to next" })
 vim.keymap.set("n", "<leader>b<", "<cmd>BufferLineMovePrev<CR>", { noremap = true, silent = true, desc = "Move current tab to previous" })
 
--- Neo-tree
-vim.keymap.set("n", "\\", "<cmd>Neotree filesystem reveal left<CR>", {})
-vim.keymap.set("n", "<leader>f\\", "<cmd>Neotree filesystem reveal left<CR>", { noremap = true, silent = true, desc = "Sync Neo-tree position" })
-
 -- Todo-comments
 vim.keymap.set({ "n", "i", "v" }, "<C-A-t>", "<esc><cmd>TodoLocList<CR>", { noremap = true, silent = true })
 
