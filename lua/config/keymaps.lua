@@ -6,7 +6,7 @@ local Util = require("lazyvim.util")
 local map = Util.safe_keymap_set
 
 -- Exit(quit all)
-vim.keymap.set({ "n", "i", "v" }, "<A-q>", "<esc><cmd>quitall<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "i", "v" }, "<C-A-q>", "<esc><cmd>quitall<CR>", { noremap = true, silent = true })
 
 -- Shift-Del
 vim.keymap.set({ "n", "v", "i" }, "<S-Del>", function()
@@ -59,6 +59,10 @@ vim.keymap.set("v", "<S-Tab>", "<gv", { noremap = true, silent = true })
 -- Reopen latest file tab
 vim.keymap.set("n", "<S-t>", "<cmd>ReopenLatest<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>br", "<cmd>ReopenLatest<CR>", { noremap = true, silent = true, desc = "Reopen latest closed tab" })
+
+-- Jump to last modified position in current file
+vim.keymap.set("n", "<C-q>", "`.", { noremap = true, silent = true, desc = "Jump to last modified position" })
+vim.keymap.set("n", "<leader>bq", "`.", { noremap = true, silent = true, desc = "Jump to last modified position" })
 
 -- File tabs
 vim.keymap.set({ "n", "i", "v" }, "<F28>", "<esc><cmd>bdelete<CR>", { noremap = true, silent = true }) -- Ctrl+F4

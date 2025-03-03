@@ -19,4 +19,3 @@ end
 vim.api.nvim_create_user_command("ReopenLatest", M.reopen_latest, {})
 
 return M
-
