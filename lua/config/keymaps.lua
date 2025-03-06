@@ -43,10 +43,8 @@ map("v", "<A-Up>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", 
 -- LSP related
 map("n", "<A-l>", "<cmd>LspStop<CR>", { desc = "Stop LSP" })
 map("n", "<A-r>", "<cmd>LspStart<CR>", { desc = "start LSP" })
-vim.keymap.set({ "n", "i", "v" }, "<F12>", function()
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<esc>", true, false, true), "n", false)
-  vim.lsp.buf.definition()
-end, { noremap = true })
+vim.keymap.set({ "n", "i" }, "<F12>", "<esc>gd", { remap = true })
+vim.keymap.set({ "n", "i" }, "<F24>", "<esc>gr", { remap = true }) -- Shift+F12
 
 -- Line/block comment (Ctrl+\)
 vim.keymap.set("n", "<C-\\>", "gcc", { remap = true })
