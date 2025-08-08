@@ -28,3 +28,4 @@ vim.api.nvim_set_hl(0, "VisualNonText", {
 vim.g.neovide_cursor_animation_length = 0
 vim.g.neovide_position_animation_length = 0
 vim.g.neovide_detach_on_quit = 'always_quit'
+vim.cmd("highlight Normal guibg=#151515")
