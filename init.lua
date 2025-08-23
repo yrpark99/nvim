@@ -2,9 +2,10 @@
 require("config.lazy")
 
 -- Set Vim options
-vim.opt.fileencodings = "utf-8, euc-kr"
-vim.opt.relativenumber = false
-vim.opt.termguicolors = true
+vim.o.fileencodings = "utf-8, euc-kr"
+vim.o.mousemoveevent = true
+vim.o.relativenumber = false
+vim.o.termguicolors = true
 
 -- Set color scheme
 vim.cmd("colorscheme vscode")
