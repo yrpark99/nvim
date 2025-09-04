@@ -3,6 +3,7 @@ require("config.lazy")
 
 -- Set Vim options
 vim.o.fileencodings = "utf-8, euc-kr"
+vim.o.linespace = -2
 vim.o.mousemoveevent = true
 vim.o.relativenumber = false
 vim.o.termguicolors = true
