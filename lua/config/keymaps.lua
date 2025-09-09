@@ -8,6 +8,14 @@ local map = Util.safe_keymap_set
 -- Exit(quit all)
 vim.keymap.set({ "n", "i", "v" }, "<C-A-q>", "<esc><cmd>quitall<CR>", { noremap = true, silent = true })
 
+-- Remove '\r' at line end in case system clipboard paste
+vim.keymap.set('n', 'p', function()
+  local content = vim.fn.getreg('+')
+  content = content:gsub('\r\n', '\n'):gsub('\r', '')
+  vim.fn.setreg('"', content)
+  vim.cmd('normal! ""p')
+end)
+
 -- Shift-Del
 vim.keymap.set({ "n", "v", "i" }, "<S-Del>", function()
   local mode = vim.api.nvim_get_mode().mode
@@ -30,7 +38,7 @@ end, { expr = true, desc = "Delete from cursor to end of line" })
 
 -- Find
 vim.keymap.set({ "n", "i" }, "<F3>", "<esc>*", { noremap = true })
-vim.keymap.set({ "n", "i" }, "<F15>", "<esc>#", { noremap = true })
+vim.keymap.set({ "n", "i" }, "<F15>", "<esc>#", { noremap = true }) -- Shift+F3
 
 -- Move lines
 map("n", "<A-Down>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
