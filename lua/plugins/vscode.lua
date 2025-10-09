@@ -7,6 +7,7 @@ return {
       group_overrides = {
         CursorLine = { bg = "#353535" },
         SnacksIndent = { fg = "#303030" },
+        SnacksIndentScope = { fg = "#b07700" },
         NeoTreeCursorLine = { bg = "#373737" },
         NvimTreeCursorLine = { bg = "#373737" },
         ["@lsp.type.comment.c"] = { fg = "#909090" },
