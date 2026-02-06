@@ -56,7 +56,7 @@ vim.keymap.set({ "n", "i" }, "<F24>", "<esc>gr", { remap = true }) -- Shift+F12
 vim.keymap.set('n', '<Tab>', ':EagleWin<CR>', { noremap = true, silent = true })
 
 -- Line/block comment (Ctrl+\)
-vim.keymap.set("n", "<C-\\>", "gcc", { remap = true })
+vim.keymap.set({ "n", "i" }, "<C-\\>", "<esc>gcc", { remap = true })
 vim.keymap.set("v", "<C-\\>", "gc", { remap = true })
 
 -- Tab indent
