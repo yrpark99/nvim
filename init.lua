@@ -31,3 +31,6 @@ vim.g.neovide_cursor_animation_length = 0
 vim.g.neovide_position_animation_length = 0
 vim.g.neovide_detach_on_quit = 'always_quit'
 vim.cmd("highlight Normal guibg=#151515")
+
+-- Set Sticky line
+vim.cmd("highlight TreesitterContextBottom gui=underline guisp=#ff0000")
