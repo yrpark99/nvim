@@ -1,6 +1,18 @@
 return {
   "nvim-lspconfig",
-  opts = {
-    inlay_hints = { enabled = false },
-  },
+  opts = function(_, opts)
+    opts.inlay_hints = { enabled = false }
+    opts.servers.lua_ls = {
+      settings = {
+        Lua = {
+          workspace = {
+            checkThirdParty = false,
+            library = {
+              vim.env.VIMRUNTIME,
+            },
+          },
+        },
+      },
+    }
+  end,
 }
