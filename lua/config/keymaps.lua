@@ -53,7 +53,7 @@ map("n", "<A-l>", "<cmd>LspStop<CR>", { desc = "Stop LSP" })
 map("n", "<A-r>", "<cmd>LspStart<CR>", { desc = "start LSP" })
 vim.keymap.set({ "n", "i" }, "<F12>", "<esc>gd", { remap = true })
 vim.keymap.set({ "n", "i" }, "<F24>", "<esc>gr", { remap = true }) -- Shift+F12
-vim.keymap.set('n', '<Tab>', ':EagleWin<CR>', { noremap = true, silent = true })
+vim.keymap.set({ "n", "i", "v" }, '<F36>', "<esc><cmd>EagleWin<CR>", { noremap = true, silent = true }) -- Ctrl+F12
 
 -- Line/block comment (Ctrl+\)
 vim.keymap.set({ "n", "i" }, "<C-\\>", "<esc>gcc", { remap = true })
