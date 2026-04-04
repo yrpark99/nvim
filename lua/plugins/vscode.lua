@@ -12,6 +12,8 @@ return {
         NvimTreeCursorLine = { bg = "#373737" },
         ["@lsp.type.comment.c"] = { fg = "#909090" },
         ["@lsp.type.comment.cpp"] = { fg = "#909090" },
+        ["@lsp.type.property.c"] = { fg = "#f36fa8" },
+        ["@lsp.type.property.cpp"] = { fg = "#f36fa8" },
       },
     })
   end,
