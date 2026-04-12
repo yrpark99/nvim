@@ -49,8 +49,8 @@ map("v", "<A-Down>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { de
 map("v", "<A-Up>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 
 -- LSP related
-map("n", "<A-l>", "<cmd>LspStop<CR>", { desc = "Stop LSP" })
-map("n", "<A-r>", "<cmd>LspStart<CR>", { desc = "start LSP" })
+map("n", "<A-l>", "<cmd>lsp disable<CR>", { desc = "Disable LSP" })
+map("n", "<A-r>", "<cmd>lsp enable<CR>", { desc = "Enable LSP" })
 vim.keymap.set({ "n", "i" }, "<F12>", "<esc>gd", { remap = true })
 vim.keymap.set({ "n", "i" }, "<F24>", "<esc>gr", { remap = true }) -- Shift+F12
 vim.keymap.set({ "n", "i", "v" }, '<F36>', "<esc><cmd>EagleWin<CR>", { noremap = true, silent = true }) -- Ctrl+F12
