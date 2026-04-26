@@ -11,4 +11,7 @@ return {
       hl = "SnacksIndent"
     },
   },
+  keys = {
+    { "<c-\\>", function() Snacks.terminal.toggle() end, desc = "Toggle Terminal", mode = {"n", "i", "t"} },
+  }
 }

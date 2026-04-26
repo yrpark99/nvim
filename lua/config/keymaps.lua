@@ -55,9 +55,12 @@ vim.keymap.set({ "n", "i" }, "<F12>", "<esc>gd", { remap = true })
 vim.keymap.set({ "n", "i" }, "<F24>", "<esc>gr", { remap = true }) -- Shift+F12
 vim.keymap.set({ "n", "i", "v" }, '<F36>', "<esc><cmd>EagleWin<CR>", { noremap = true, silent = true }) -- Ctrl+F12
 
--- Line/block comment (Ctrl+\)
-vim.keymap.set({ "n", "i" }, "<C-\\>", "<esc>gcc", { remap = true })
-vim.keymap.set("v", "<C-\\>", "gc", { remap = true })
+-- Line/block comment (Ctrl+/)
+vim.keymap.set({ "n", "i" }, "<C-_>", "<esc>gcc", { remap = true })
+vim.keymap.set("v", "<C-_>", function()
+  local keys = vim.api.nvim_replace_termcodes("gc", true, false, true)
+  vim.api.nvim_feedkeys(keys, "m", false)
+end, { desc = "Toggle comment" })
 
 -- Tab indent
 vim.keymap.set("v", "<Tab>", ">gv", { noremap = true, silent = true })
