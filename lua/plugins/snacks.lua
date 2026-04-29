@@ -12,6 +12,7 @@ return {
     },
   },
   keys = {
-    { "<c-\\>", function() Snacks.terminal.toggle() end, desc = "Toggle Terminal", mode = {"n", "i", "t"} },
+    { "<C-e>", function() Snacks.explorer() end, desc = "Toggle explorer", mode = {"n", "i"} },
+    { "<C-\\>", function() Snacks.terminal.toggle() end, desc = "Toggle Terminal", mode = {"n", "i", "t"} },
   }
 }
