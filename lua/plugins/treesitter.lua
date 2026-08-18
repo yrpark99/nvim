@@ -10,7 +10,6 @@ return {
       "css",
       "go",
       "java",
-      "javadoc",
       "javascript",
       "kotlin",
       "lua",

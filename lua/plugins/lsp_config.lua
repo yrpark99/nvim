@@ -17,7 +17,7 @@ return {
     opts.servers.make_ls = {
       cmd = { "make-ls" },
       filetypes = { "make" },
-      root_markers = { "Makefile", "makefile", "GNUmakefile", ".git" },
+      root_markers = { "Makefile", "makefile", "GNUmakefile", ".git", ".svn" },
     }
   end,
 }
